@@ -1,0 +1,16 @@
+{
+  "schema_version": "1",
+  "engine_version": "0.8.0",
+  "models": {
+    "keras_speech_music_noise_cnn.hdf5": {
+      "url": "https://github.com/ina-foss/inaSpeechSegmenter/releases/download/models/keras_speech_music_noise_cnn.hdf5",
+      "sha256": "f04b5e3c86fa2e81666d106b0867350fe7858c7bd006c2a74c27b5b45507e7d8",
+      "size": 3244808
+    },
+    "keras_male_female_cnn.hdf5": {
+      "url": "https://github.com/ina-foss/inaSpeechSegmenter/releases/download/models/keras_male_female_cnn.hdf5",
+      "sha256": "2ed3714bdbda7f1ed115b3077ff285ccbb23279df7a3bab6969ee98b6019736f",
+      "size": 6040200
+    }
+  }
+}

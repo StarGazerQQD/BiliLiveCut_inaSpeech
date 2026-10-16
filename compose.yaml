@@ -1,0 +1,54 @@
+services:
+  inaspeech:
+    image: ghcr.io/astral-sh/uv:0.12.18-python3.12-trixie-slim@sha256:38f41574703989d6e5f02be80a3d687b00f98744cce86908097bcd34bcb7eb98
+    platform: linux/amd64
+    user: "${INASPEECH_UID:-1000}:${INASPEECH_GID:-1000}"
+    init: true
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    working_dir: /work
+    environment:
+      PYTHONPATH: /work/src
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+      UV_PYTHON_DOWNLOADS: never
+      UV_CACHE_DIR: /work/.local/uv-cache-linux
+      UV_LINK_MODE: copy
+      TMPDIR: /work/.local/runtime-data/tmp
+      HOME: /work/.local/runtime-data/home
+      MPLCONFIGDIR: /work/.local/runtime-data/matplotlib
+      XDG_CACHE_HOME: /work/.local/runtime-data/cache
+    volumes:
+      - .:/work:ro
+      - ./.local:/work/.local:ro
+      - ./.local/runtime-data:/work/.local/runtime-data:rw
+    ports:
+      - "127.0.0.1:8766:8766"
+    cpus: "${INASPEECH_CPUS:-2.0}"
+    mem_limit: "${INASPEECH_MEMORY:-4g}"
+    pids_limit: 128
+    stop_grace_period: 30s
+    command:
+      - /work/.local/runtime-venv/bin/python
+      - -m
+      - blc_inaspeech
+      - serve
+      - --host
+      - 0.0.0.0
+      - --model-dir
+      - .local/models
+      - --token-file
+      - .local/inaspeech.token
+      - --device
+      - "${INASPEECH_DEVICE:-cpu}"
+      - --batch-size
+      - "${INASPEECH_BATCH:-128}"
+      - --threads
+      - "${INASPEECH_THREADS:-2}"
+    healthcheck:
+      test: [CMD, /work/.local/runtime-venv/bin/python, -m, blc_inaspeech, health, --token-file, .local/inaspeech.token]
+      interval: 30s
+      timeout: 10s
+      start_period: 120s
+      retries: 3

@@ -1,0 +1,10 @@
+{
+  "id": "blc-inaspeech",
+  "name": "inaSpeech 音频分类",
+  "version": "0.1.0",
+  "api_version": "1",
+  "entrypoint": "main.py:Plugin",
+  "description": "通过独立服务旁路记录人声、音乐、噪声和静音；保留原评分和 ASR，不能与其他高光评分插件同时启用。",
+  "settings_page": true,
+  "capabilities": ["highlight_scorer"]
+}

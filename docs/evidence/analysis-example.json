@@ -1,0 +1,71 @@
+{
+  "schema_version": "1",
+  "engine": "inaSpeechSegmenter",
+  "engine_version": "0.8.0",
+  "duration_s": 74.5229375,
+  "segments": [
+    {
+      "label": "music",
+      "start_s": 0.0,
+      "end_s": 22.48
+    },
+    {
+      "label": "silence",
+      "start_s": 22.48,
+      "end_s": 29.080000000000002
+    },
+    {
+      "label": "noise",
+      "start_s": 29.080000000000002,
+      "end_s": 52.800000000000004
+    },
+    {
+      "label": "silence",
+      "start_s": 52.800000000000004,
+      "end_s": 54.78
+    },
+    {
+      "label": "noise",
+      "start_s": 54.78,
+      "end_s": 55.74
+    },
+    {
+      "label": "silence",
+      "start_s": 55.74,
+      "end_s": 63.34
+    },
+    {
+      "label": "speech",
+      "start_s": 63.34,
+      "end_s": 68.26
+    },
+    {
+      "label": "silence",
+      "start_s": 68.26,
+      "end_s": 68.92
+    },
+    {
+      "label": "speech",
+      "start_s": 68.92,
+      "end_s": 71.60000000000001
+    },
+    {
+      "label": "silence",
+      "start_s": 71.60000000000001,
+      "end_s": 72.0
+    },
+    {
+      "label": "speech",
+      "start_s": 72.0,
+      "end_s": 73.82000000000001
+    },
+    {
+      "label": "silence",
+      "start_s": 73.82000000000001,
+      "end_s": 74.5229375
+    }
+  ],
+  "model_sha256": "f04b5e3c86fa2e81666d106b0867350fe7858c7bd006c2a74c27b5b45507e7d8",
+  "inference_s": 1.750077125000189,
+  "cache_hit": false
+}

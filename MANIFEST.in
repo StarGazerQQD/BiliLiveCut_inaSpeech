@@ -1,0 +1,5 @@
+include LICENSE README.md uv.lock .gitignore
+include compose.yaml compose.setup.yaml compose.gpu.yaml .env.example .python-version
+recursive-include plugin *.py *.json
+recursive-include scripts *.py
+recursive-include docs *.md *.json

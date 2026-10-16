@@ -1,0 +1,5 @@
+# 仅用于显式安装、模型准备和令牌初始化；正常服务不要加载此文件。
+services:
+  inaspeech:
+    volumes:
+      - ./.local:/work/.local:rw

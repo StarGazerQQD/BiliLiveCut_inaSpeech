@@ -1,0 +1,215 @@
+{
+  "sample": {
+    "name": "musanmix.wav",
+    "sha256": "f325193b727fefae46a8865747aacd50faa9a33e76924bcb9ebb5eb2d4c339ee",
+    "duration_s": 74.5229375
+  },
+  "environment": {
+    "python": "3.12.15",
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.41",
+    "tensorflow": "2.21.0",
+    "inaspeech": "0.8.0",
+    "device": "cpu",
+    "threads": 2,
+    "iterations": 3
+  },
+  "first_import_and_model_load_s": 52.790979034999964,
+  "scenarios": {
+    "reload_model_batch32_no_gender": {
+      "seconds": [
+        2.3782104659999277,
+        2.449999202000072,
+        2.326430271999925
+      ],
+      "median_s": 2.3782104659999277,
+      "rtf": 0.031912462736723546,
+      "same_segments": true
+    },
+    "resident_batch32_no_gender": {
+      "seconds": [
+        1.8667715419996966,
+        1.6866368640003202,
+        1.7490000900002087
+      ],
+      "median_s": 1.7490000900002087,
+      "rtf": 0.023469285412967097,
+      "same_segments": true
+    },
+    "resident_batch128_no_gender": {
+      "seconds": [
+        1.4192342020000979,
+        1.286946295999769,
+        1.3223869749999722
+      ],
+      "median_s": 1.3223869749999722,
+      "rtf": 0.017744697396019478,
+      "same_segments": true
+    },
+    "resident_batch128_with_gender": {
+      "seconds": [
+        2.310116138000012,
+        2.543441289999919,
+        2.4586805270000696
+      ],
+      "median_s": 2.4586805270000696,
+      "rtf": 0.032992265327706244,
+      "same_segments": true
+    }
+  },
+  "cache_hit": {
+    "seconds": [
+      0.0010143499998775951,
+      0.000702812999861635,
+      0.0006454219997067412
+    ],
+    "median_s": 0.000702812999861635,
+    "scope": "same WAV bytes; not new-audio inference"
+  },
+  "profile": [
+    {
+      "file": "polymorphic_function.py",
+      "function": "__call__",
+      "calls": 23,
+      "self_s": 0.000802548,
+      "cumulative_s": 0.9031340330000001
+    },
+    {
+      "file": "polymorphic_function.py",
+      "function": "_call",
+      "calls": 23,
+      "self_s": 0.000339086,
+      "cumulative_s": 0.9009650960000001
+    },
+    {
+      "file": "tracing_compilation.py",
+      "function": "call_function",
+      "calls": 23,
+      "self_s": 0.000323949,
+      "cumulative_s": 0.8992861040000001
+    },
+    {
+      "file": "concrete_function.py",
+      "function": "_call_flat",
+      "calls": 23,
+      "self_s": 0.000221525,
+      "cumulative_s": 0.8873012650000001
+    },
+    {
+      "file": "atomic_function.py",
+      "function": "call_preflattened",
+      "calls": 23,
+      "self_s": 0.000163009,
+      "cumulative_s": 0.8869042340000001
+    },
+    {
+      "file": "atomic_function.py",
+      "function": "call_flat",
+      "calls": 23,
+      "self_s": 0.001499137,
+      "cumulative_s": 0.8864569670000001
+    },
+    {
+      "file": "context.py",
+      "function": "call_function",
+      "calls": 23,
+      "self_s": 0.00036854300000000004,
+      "cumulative_s": 0.883608111
+    },
+    {
+      "file": "execute.py",
+      "function": "quick_execute",
+      "calls": 23,
+      "self_s": 0.00016989900000000002,
+      "cumulative_s": 0.8831109070000001
+    },
+    {
+      "file": "<native>",
+      "function": "<built-in method tensorflow.python._pywrap_tfe.TFE_Py_Execute>",
+      "calls": 23,
+      "self_s": 0.882905453,
+      "cumulative_s": 0.882905453
+    },
+    {
+      "file": "array_data_adapter.py",
+      "function": "permutation",
+      "calls": 1,
+      "self_s": 1.0839e-05,
+      "cumulative_s": 0.159061
+    },
+    {
+      "file": "<native>",
+      "function": "<built-in method gc.collect>",
+      "calls": 1,
+      "self_s": 0.12039843200000001,
+      "cumulative_s": 0.12039843200000001
+    },
+    {
+      "file": "segmenter.py",
+      "function": "_media2feats",
+      "calls": 1,
+      "self_s": 5.7034e-05,
+      "cumulative_s": 0.099015193
+    },
+    {
+      "file": "traceback_utils.py",
+      "function": "error_handler",
+      "calls": 132,
+      "self_s": 0.000923575,
+      "cumulative_s": 0.06280540500000001
+    },
+    {
+      "file": "io.py",
+      "function": "media2sig16kmono",
+      "calls": 1,
+      "self_s": 1.4973e-05,
+      "cumulative_s": 0.05964072
+    },
+    {
+      "file": "soundfile.py",
+      "function": "read",
+      "calls": 1,
+      "self_s": 2.1429e-05,
+      "cumulative_s": 0.059623752
+    },
+    {
+      "file": "soundfile.py",
+      "function": "read",
+      "calls": 1,
+      "self_s": 9.004e-06,
+      "cumulative_s": 0.05373486
+    },
+    {
+      "file": "soundfile.py",
+      "function": "_array_io",
+      "calls": 1,
+      "self_s": 3.8426e-05,
+      "cumulative_s": 0.053677834
+    },
+    {
+      "file": "soundfile.py",
+      "function": "_cdata_io",
+      "calls": 1,
+      "self_s": 0.0535525,
+      "cumulative_s": 0.053599264
+    },
+    {
+      "file": "pyannote_viterbi.py",
+      "function": "viterbi_decoding",
+      "calls": 7,
+      "self_s": 0.033712125,
+      "cumulative_s": 0.050796466000000005
+    },
+    {
+      "file": "sidekit_mfcc.py",
+      "function": "mfcc",
+      "calls": 1,
+      "self_s": 0.0021136460000000003,
+      "cumulative_s": 0.038542596000000005
+    }
+  ],
+  "limitations": [
+    "single public mixed-audio sample; no Chinese accuracy benchmark",
+    "same-process reload baseline excludes repeated TensorFlow import",
+    "Docker Windows bind mount; hardware-dependent; no CUDA measurements"
+  ]
+}
